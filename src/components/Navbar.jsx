@@ -12,6 +12,10 @@ const Navbar = () => {
       {
         user&&<li><NavLink to='/orders'>Orders</NavLink></li>
       }
+      {
+        user && <li><NavLink to='/profile'>Profile</NavLink></li>
+      }
+
   </>
   const handleSignOut = () => {
     signOutUser()
@@ -55,7 +59,7 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-            <a>{ user?<div className='space-x-3'><button>{user?.email}</button><button className="btn" onClick={handleSignOut}>Sign Out</button></div>:<button className='btn'><Link to='/login'>Login</Link></button>}</a>
+            <div>{ user?<div className='space-x-3'><button>{user?.email}</button><button className="btn" onClick={handleSignOut}>Sign Out</button></div>:<button className='btn'><Link to='/login'>Login</Link></button>}</div>
   </div>
 </div>
         </div>
